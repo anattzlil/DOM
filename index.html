@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        var btn = document.createElement('button');
+        var txt = document.createTextNode('click me');
+        var cont = document.getElementById('container');
+        btn.appendChild(txt);
+        cont.appendChild(btn);
+    </script>
+    <p id="para" onmouseover=changeText() onmouseout=mouseOut()>first text</p>
+    <script>
+        var changeText = function() {
+            document.getElementById('para').innerHTML = "new text";
+        }
+        var mouseOut = function() {
+            document.getElementById('para').innerHTML = "first text";
+        }
+    </script>
+
+    <ul id="itemList" onclick=addItem()>
+        <li>A list item</li>
+    </ul>
+    <script>
+        var addItem = function(){
+            var newItem = document.createElement('li');
+            var itemText = document.createTextNode('another item');
+            var list =document.getElementById('itemList');
+            newItem.appendChild(itemText);
+            list.appendChild(newItem);
+
+        }
+    </script>
+    <p id="elevation"></p>
+    <div id="btn-cont"></div>
+    <script src="main.js"></script>
+</body>
+</html>
